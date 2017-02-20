@@ -1,2 +1,3 @@
-Brett Wilhelm\n
+Brett Wilhelm
+
 Zach Johnson
