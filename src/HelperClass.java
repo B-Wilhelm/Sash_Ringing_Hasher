@@ -5,9 +5,7 @@
  */
 
 public class HelperClass {
-	
-	
-	
+		
 	public int primeFind(int range) {	// Helper for constructor
 		while(true) {
 			if(isPrime(range)){

@@ -5,8 +5,8 @@
  */
 
 public class HashFunction {
-	int a, b, p;
 	HelperClass h = new HelperClass();
+	int a, b, p;
 	
 	HashFunction(int range) {
 		p = h.primeFind(range);
