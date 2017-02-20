@@ -23,4 +23,3 @@ public class Tuple {
 		return (value == t.value);
 	}
 }
-
