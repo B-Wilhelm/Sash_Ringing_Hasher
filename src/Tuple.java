@@ -1,5 +1,7 @@
 /**
- * 	@author	Brett W.
+ * 
+ * @author Brett W.
+ * 
  */
 
 public class Tuple {
