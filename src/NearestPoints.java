@@ -60,7 +60,7 @@ public class NearestPoints {
 		for(int i = 0; i < points.size(); i++) {
 			temp = makeTuple(points.get(i));
 			System.out.println("Key: " + temp.getKey());
-			System.out.println("Size: " + T.size());
+//			System.out.println("Size: " + T.size());
 			T.add(temp);
 		}
 		
