@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NearestPoints {
+	public static String NAIVE_FILENAME="NaiveSolution", HASH_FILENAME="HashSolution";
 	ArrayList<Float> points, naive, hash;
 	HashTable T = null;
 	int i;
@@ -80,7 +81,7 @@ public class NearestPoints {
 	void allNearestPointsNaive(){
 		for(i = 0; i < points.size(); i++) {
 			try {
-				printPoints(naiveNearestPoints(points.get(i)), "NaiveSolution");
+				printPoints(naiveNearestPoints(points.get(i)), NAIVE_FILENAME);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -90,7 +91,7 @@ public class NearestPoints {
 	void allNearestPointsHash(){
 		for(i = 0; i < points.size(); i++) {
 			try {
-				printPoints(npHashNearestPoints(points.get(i)), "HashSolution");
+				printPoints(npHashNearestPoints(points.get(i)), HASH_FILENAME);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
