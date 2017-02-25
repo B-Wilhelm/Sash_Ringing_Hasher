@@ -8,41 +8,41 @@ import java.util.Random;
  */
 
 public class HashFunction {
-	HelperClass h = new HelperClass();
-	int a, b, p;
-	Random r = new Random();
+	private HelperClass h = new HelperClass();
+	private int a, b, p;
+	private Random r = new Random();
 	
-	HashFunction(int range) {
+	public HashFunction(int range) {
 		p = h.primeFind(range);
 		a = r.nextInt(p-1)+1;
 		b = r.nextInt(p-1)+1;
 	}
 	
-	int hash(int x) {
+	public int hash(int x) {
 		return ((a*x+b)%p);	// We need a good hash function here
 	}
 	
-	int getA() {
+	public int getA() {
 		return a;
 	}
 	
-	void setA(int x) {
+	public void setA(int x) {
 		this.a = x%p;
 	}
 	
-	int getB() {
+	public int getB() {
 		return b;
 	}
 	
-	void setB(int y) {
+	public void setB(int y) {
 		this.b = y%p;
 	}
 	
-	int getP() {
+	public int getP() {
 		return p;
 	}
 	
-	void setP(int p) {
+	public void setP(int p) {
 		this.p = h.primeFind(p);
 	}
 }
