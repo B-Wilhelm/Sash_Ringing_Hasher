@@ -58,11 +58,11 @@ public class RecSys {
 				sum += movies[x][b];
 				count++;
 			}
-			if(movies[x+1][b] != 0) {
+			if(movies[x+1][b] != 0 && (x+1 > 4)) {
 				sum += movies[x+1][b];
 				count++;
 			}
-			if(movies[x-1][b] != 0) {
+			if(movies[x-1][b] != 0 && (x-1 < 0)) {
 				sum += movies[x-1][b];
 				count++;
 			}
