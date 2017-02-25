@@ -19,7 +19,11 @@ public class HashFunction {
 	}
 	
 	public int hash(int x) {
-		return ((a*x+b)%p);	// We need a good hash function here
+		int result = ((a*x+b)%p);
+		if(result < 0) { 
+			result += p;
+		}
+		return result;	// We need a good hash function here
 	}
 	
 	public int getA() {
