@@ -18,7 +18,7 @@ public class HashFunction {
 		b = r.nextInt(p-1)+1;
 	}
 	
-	float hash(int x) {
+	int hash(int x) {
 		return ((a*x+b)%p);	// We need a good hash function here
 	}
 	

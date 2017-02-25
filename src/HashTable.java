@@ -11,7 +11,7 @@ public class HashTable {
 	HelperClass h = new HelperClass();
 	HashFunction f;
 	ArrayList<Tuple>[] buckets;
-	int p, i;//p is the num of lists
+	int p, i;//p is the num of lists 
 	
 	@SuppressWarnings("unchecked")
 	HashTable(int size) {
@@ -44,7 +44,6 @@ public class HashTable {
 	}
 	
 	int size() {
-		//TODO
 		return p;
 	}
 	
@@ -65,6 +64,8 @@ public class HashTable {
 	
 	void add(Tuple t) {
 		//TODO add the element to the table
+		int bucket = f.hash(t.getKey());
+		buckets[bucket].add(t);
 		if(loadFactor() >= .7){
 			//TODO resize the table
 		}
