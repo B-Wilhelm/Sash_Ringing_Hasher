@@ -51,8 +51,13 @@ public class NearestPoints {
 	}
 	
 	void buildDataStructure(){
+		//Need to test run-time of this
 		HashTable T = new HashTable((int)(1.5 * points.size()));
-		
+		Tuple temp;
+		for(int i = 0; i < points.size(); i++) {
+			temp = makeTuple(points.get(i));
+			T.add(temp);
+		}
 		
 	}
 	
@@ -99,4 +104,10 @@ public class NearestPoints {
 		
 		writer.close();
 	}
+	
+	private Tuple makeTuple(float p){
+		int g = (int)Math.floor(p);
+		Tuple t = new Tuple(g,p);
+		return t;
+		}
 }
