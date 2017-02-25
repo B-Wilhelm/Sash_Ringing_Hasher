@@ -41,10 +41,7 @@ public class HashTable {
 		return 0;
 	}
 	
-	float loadFactor() {
-		// Return load factor (numElements/size)
-		return this.numElements()/this.size();
-	}
+	float loadFactor() { return (numElements()/size()); }
 	
 	void add(Tuple t) {
 		// Adds t to the hash table, resizes table at load factor > .7 and rehashes
