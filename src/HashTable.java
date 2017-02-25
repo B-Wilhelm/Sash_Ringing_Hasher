@@ -9,12 +9,19 @@ import java.util.ArrayList;
 
 public class HashTable {
 	HelperClass h = new HelperClass();
+	HashFunction f;
+	ArrayList<Tuple>[] cols;
 	int p;
 	
+	@SuppressWarnings("unchecked")
 	HashTable(int size) {
 		p = h.primeFind(size);
+		f = new HashFunction(p);
+		cols = new ArrayList[p];
 		
-		// Create hash table of size p
+		for (int i = 0; i< p; i++) {
+			cols[i] = new ArrayList<Tuple>();
+		}
 	}
 	
 	int maxLoad() {
