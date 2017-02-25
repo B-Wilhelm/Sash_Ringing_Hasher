@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /** 
  * 
@@ -8,9 +11,18 @@ import java.util.ArrayList;
  */
 
 public class NearestPoints {
+	ArrayList<Float> points;
 	
-	NearestPoints(String dataFile) {
-		//TODO
+	NearestPoints(String dataFile) throws FileNotFoundException {
+		File f = new File("../points.txt");
+		Scanner s = new Scanner(f);
+		
+		while(s.hasNextLine()) {
+			points.add(s.nextFloat());
+			System.out.println(s.nextFloat());
+		}
+		
+		s.close();
 	}
 	
 	NearestPoints(ArrayList<Float> pointSet) {

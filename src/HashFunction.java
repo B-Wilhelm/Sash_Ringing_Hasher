@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * 
  * @author Brett Wilhelm
@@ -8,10 +10,12 @@
 public class HashFunction {
 	HelperClass h = new HelperClass();
 	int a, b, p;
+	Random r = new Random();
 	
 	HashFunction(int range) {
 		p = h.primeFind(range);
-		//TODO set a,b
+		a = r.nextInt(p-1)+1;
+		b = r.nextInt(p-1)+1;
 	}
 	
 	float hash(int x) {
