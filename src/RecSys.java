@@ -13,12 +13,15 @@ import java.util.Scanner;
 
 public class RecSys {
 	private NearestPoints n;
+	ArrayList<Float> users;
+	int userCount, movieCount, i, j;
+	int movies[][];
 	
 	RecSys(String mrMatrix) throws FileNotFoundException {
-		ArrayList<Float> users;
 		File f = new File(mrMatrix);
 		Scanner s = new Scanner(f);
-		int userCount = 0, movieCount = 0, i, j;
+		userCount = 0;
+		movieCount = 0;
 		
 		if(s.hasNextLine()) {
 			userCount = s.nextInt();
@@ -26,7 +29,7 @@ public class RecSys {
 		}
 		
 		users = new ArrayList<Float>();
-		int movies[][] = new int[userCount][movieCount];
+		movies = new int[userCount][movieCount];
 		
 		for(i = 0; s.hasNext(); i++) {
 			users.add(s.nextFloat());
