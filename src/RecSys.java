@@ -39,6 +39,7 @@ public class RecSys {
 		}
 		
 		n = new NearestPoints(users);
+		s.close();
 	}
 	
 	public float ratingOf(int u, int m) {
