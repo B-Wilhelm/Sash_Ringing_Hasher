@@ -72,30 +72,15 @@ public class HashTable {
 	
 	ArrayList<Tuple> search(int k) {
 		// Return list of Tuples with k == key, blank list otherwise
-		ArrayList<Tuple> list = new ArrayList<Tuple>();
-		for(int i = 0; i < p;i++) {
-			for(int j = 0; j < buckets[i].size();j++)
-			{
-				if(buckets[i].get(j).getKey() == k)
-				{
-					list.add(buckets[i].get(j));
-				}
-			}
-		}
-		return list;
+		int bucket = f.hash(k);
+		return buckets[bucket];
 	}
 	
 	void remove(Tuple t) {
-		for(int i = 0; i < p;i++) {
-			for(int j = 0; j < buckets[i].size();j++)
-			{
-				if(buckets[i].get(j).equals(t))
-				{
-					buckets[i].remove(j);
-					return;//unsure if we only delete the one tuple or all tuples that match
-					//if we don't return add in the following line to make sure we don't go out of bounds
-					//j--;
-				}
+		int bucket = f.hash(t.getKey());
+		for(int i=0;i<buckets[bucket].size();i++) {
+			if(t.equals(buckets[bucket].get(i))) {
+				buckets[bucket].remove(i);//potential out of bounds error
 			}
 		}
 	}
