@@ -11,6 +11,7 @@ public class HashFunction {
 	
 	HashFunction(int range) {
 		p = h.primeFind(range);
+		//TODO set a,b
 	}
 	
 	float hash(int x) {
