@@ -1,5 +1,12 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,9 +18,11 @@ import java.util.Scanner;
  */
 
 public class NearestPoints {
-	ArrayList<Float> points = new ArrayList<Float>();
+	ArrayList<Float> points;
+	int i;
 	
 	NearestPoints(String dataFile) throws FileNotFoundException {
+		points = new ArrayList<Float>();
 		File f = new File(dataFile);
 		Scanner s = new Scanner(f);
 		
@@ -29,10 +38,10 @@ public class NearestPoints {
 	}
 	
 	NearestPoints(ArrayList<Float> pointSet) {
-		//TODO
+		points = pointSet;
 	}
 	
-	ArrayList<Float>  naiveNearestPoints(float p){
+	ArrayList<Float> naiveNearestPoints(float p){
 		//TODO
 		return null;
 	}
@@ -46,11 +55,29 @@ public class NearestPoints {
 		return null;
 	}
 	
-	void allNearestPointsNaive(){
-		//TODO
+	void allNearestPointsNaive() throws FileNotFoundException, UnsupportedEncodingException{
+		for(i = 0; i < points.size(); i++) {
+			try {
+				printPoints(naiveNearestPoints(points.get(i)), "NaiveSolution");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	void allNearestPointsHash(){
 		//TODO
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	void printPoints(ArrayList<Float> list, String filename) throws IOException {
+		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename+".txt"), "utf-8"));
+		
+		for(i = 0; i < list.size(); i++) {
+			writer.write(list.get(i).toString());
+		}
+		
+		writer.close();
 	}
 }
