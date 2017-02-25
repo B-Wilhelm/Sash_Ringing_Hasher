@@ -1,6 +1,7 @@
 /**
  * 
- * @author Brett W, Zach Johnson.
+ * @author Brett Wilhelm
+ * @author Zach Johnson
  * 
  */
 
