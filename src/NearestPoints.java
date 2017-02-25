@@ -33,6 +33,7 @@ public class NearestPoints {
 		}
 		
 		s.close();
+		buildDataStructure();
 	}
 	
 	NearestPoints(ArrayList<Float> pointSet) {
@@ -51,7 +52,7 @@ public class NearestPoints {
 		return naive;
 	}
 	
-	void buildDataStructure(){
+	void buildDataStructure() {
 		//Need to test run-time of this
 		T = new HashTable((int)(1.5 * points.size()));
 		Tuple temp;
@@ -62,12 +63,8 @@ public class NearestPoints {
 		
 	}
 	
-	ArrayList<Float> npHashNearestPoints(float p){
+	ArrayList<Float> npHashNearestPoints(float p) {
 		//Need to test run-time of this
-		if(T == null)
-		{
-			buildDataStructure();
-		}
 		hash = new ArrayList<Float>();
 		ArrayList<Tuple> nearestPoints = T.search(makeTuple(p).getKey());
 		for(int i = 0; i < nearestPoints.size(); i++) {
@@ -77,7 +74,7 @@ public class NearestPoints {
 		return hash;
 	}
 	
-	void allNearestPointsNaive(){
+	void allNearestPointsNaive() {
 		for(i = 0; i < points.size(); i++) {
 			try {
 				printPoints(naiveNearestPoints(points.get(i)), "NaiveSolution");
