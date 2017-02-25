@@ -39,8 +39,13 @@ public class HashTable {
 	
 	int averageLoad() {
 		// Return average load of table
-		//TODO
-		return (numElements()/p);
+		int numNonEmptyBuckets = 0;
+		for(int i = 0; i<p;i++){
+			if(buckets[i] != null){
+				numNonEmptyBuckets++;
+			}
+		}
+		return (numElements()/numNonEmptyBuckets);
 	}
 	
 	int size() {
