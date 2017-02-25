@@ -53,8 +53,9 @@ public class RecSys {
 		similarUsers = n.npHashNearestPoints(u);
 		
 		for(i = 0; i < similarUsers.size(); i++) {
-			if(movies[users.indexOf(similarUsers.get(i))][b] != 0) {
-				sum += movies[users.indexOf(similarUsers.get(i))][b];
+			int x = users.indexOf(similarUsers.get(i));
+			if(movies[x][b] != 0) {
+				sum += movies[x][b];
 				count++;
 			}
 		}
