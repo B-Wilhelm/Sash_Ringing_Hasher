@@ -99,7 +99,6 @@ public class NearestPoints {
 	
 	void printPoints(ArrayList<Float> list, String filename) throws IOException {
 		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename+".txt"), "utf-8"));
-		String toWrite;
 		
 		for(i = 0; i < list.size(); i++) {
 			writer.write(list.get(i).toString() + "\n");
