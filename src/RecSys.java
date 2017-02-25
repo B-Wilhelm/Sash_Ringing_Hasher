@@ -22,15 +22,17 @@ public class RecSys {
 			movieCount = s.nextInt();
 		}
 		
-		float users[] = new float[userCount];
-		int movies[][] = new int[userCount][movieCount];
+		HashTable t = new HashTable(userCount);
 		
-		for(i = 0; s.hasNext(); i++) {
-			users[i] = s.nextFloat();
-			for(j = 0; j < movieCount; j++) {
-				movies[i][j] = s.nextInt();
-			}
-		}
+//		float users[] = new float[userCount];
+//		int movies[][] = new int[userCount][movieCount];
+//		
+//		for(i = 0; s.hasNext(); i++) {
+//			users[i] = s.nextFloat();
+//			for(j = 0; j < movieCount; j++) {
+//				movies[i][j] = s.nextInt();
+//			}
+//		}
 	}
 	
 	public float ratingOf(int u, int m) {
