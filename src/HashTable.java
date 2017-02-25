@@ -63,7 +63,6 @@ public class HashTable {
 	}
 	
 	void add(Tuple t) {
-		//TODO add the element to the table
 		int bucket = f.hash(t.getKey());
 		buckets[bucket].add(t);
 		if(loadFactor() >= .7){
