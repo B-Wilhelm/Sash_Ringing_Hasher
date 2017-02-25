@@ -44,7 +44,7 @@ public class RecSys {
 	public float ratingOf(int u, int m) {
 		ArrayList<Float> similarUsers;
 		int a = u-1, b = m-1;
-		int sum = 0, count = 0;
+		int sum = 0, count = 0, x;
 		
 		if(movies[a][b] != 0) { 
 			return movies[a][b];
@@ -53,18 +53,24 @@ public class RecSys {
 		similarUsers = n.npHashNearestPoints(u);
 		
 		for(i = 0; i < similarUsers.size(); i++) {
-			int x = users.indexOf(similarUsers.get(i));
+			x = users.indexOf(similarUsers.get(i));
 			if(movies[x][b] != 0) {
 				sum += movies[x][b];
 				count++;
 			}
-			if(movies[x+1][b] != 0 && (x+1 > 4)) {
-				sum += movies[x+1][b];
-				count++;
+			if(similarUsers.get(i)+1 <= 4) {
+				x = users.indexOf(similarUsers.get(i)+1);
+				if(movies[x][b] != 0) {
+					sum += movies[x][b];
+					count++;
+				}
 			}
-			if(movies[x-1][b] != 0 && (x-1 < 0)) {
-				sum += movies[x-1][b];
-				count++;
+			if(similarUsers.get(i)-1 >= 0) {
+				x = users.indexOf(similarUsers.get(i)-11);
+				if(movies[x][b] != 0) {
+					sum += movies[x][b];
+					count++;
+				}
 			}
 		}
 
