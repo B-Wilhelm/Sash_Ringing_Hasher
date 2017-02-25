@@ -11,7 +11,7 @@ public class HashTable {
 	HelperClass h = new HelperClass();
 	HashFunction f;
 	ArrayList<Tuple>[] buckets;
-	int p, i;
+	int p, i;//p is the num of lists
 	
 	@SuppressWarnings("unchecked")
 	HashTable(int size) {
@@ -63,13 +63,25 @@ public class HashTable {
 	}
 	
 	void add(Tuple t) {
-		// Adds t to the hash table, resizes table at load factor > .7 and rehashes
+		
+		if(loadFactor() >= .7){
+			//TODO resize the table
+		}
 	}
 	
 	ArrayList<Tuple> search(int k) {
 		// Return list of Tuples with k == key, blank list otherwise
-		
-		return new ArrayList<Tuple>();
+		ArrayList<Tuple> list = new ArrayList<Tuple>();
+		for(int i = 0; i < p;i++) {
+			for(int j = 0; j < buckets[i].size();j++)
+			{
+				if(buckets[i].get(j).getKey() == k)
+				{
+					list.add(buckets[i].get(j));
+				}
+			}
+		}
+		return list;
 	}
 	
 	void remove(Tuple t) {
