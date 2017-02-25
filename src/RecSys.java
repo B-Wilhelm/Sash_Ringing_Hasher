@@ -58,6 +58,14 @@ public class RecSys {
 				sum += movies[x][b];
 				count++;
 			}
+			if(movies[x+1][b] != 0) {
+				sum += movies[x+1][b];
+				count++;
+			}
+			if(movies[x-1][b] != 0) {
+				sum += movies[x-1][b];
+				count++;
+			}
 		}
 
 		return ((float)sum/(float)count);
