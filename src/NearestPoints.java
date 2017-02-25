@@ -29,7 +29,6 @@ public class NearestPoints {
 		while(s.hasNextFloat()) {
 			temp = s.nextFloat();
 			points.add(temp);
-//			System.out.println(temp);
 		}
 		
 		s.close();
