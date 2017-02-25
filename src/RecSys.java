@@ -44,7 +44,11 @@ public class RecSys {
 	}
 	
 	public float ratingOf(int u, int m) {
-		//TODO
+		if(movies[u][m] != 0) { 
+			return movies[u][m];
+		}
+		ArrayList<Float> similarUsers = n.npHashNearestPoints(u);
+		//movies[u][m]
 		return 0;
 	}
 }
