@@ -14,7 +14,7 @@ public class HashFunction {
 	}
 	
 	float hash(int x) {
-		return (a*x+b/p);	// We need a good hash function here
+		return ((a*x+b)%p);	// We need a good hash function here
 	}
 	
 	int getA() {
