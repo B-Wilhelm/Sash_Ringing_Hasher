@@ -51,7 +51,7 @@ public class RecSys {
 			return movies[a][b];
 		}
 		
-		similarUsers = n.npHashNearestPoints(u);
+		similarUsers = n.npHashNearestPoints(users.indexOf(a));
 		
 		for(i = 0; i < similarUsers.size(); i++) {
 			x = users.indexOf(similarUsers.get(i));

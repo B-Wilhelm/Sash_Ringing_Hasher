@@ -17,6 +17,8 @@ public class test {
 //		System.out.println(r.ratingOf(5,  2));
 		
 		n.allNearestPointsNaive();
+		
+		n.allNearestPointsHash();
 	}
 
 }
