@@ -44,11 +44,22 @@ public class RecSys {
 	}
 	
 	public float ratingOf(int u, int m) {
+		ArrayList<Float> similarUsers;
+		int sum = 0, count = 0;
+		
 		if(movies[u][m] != 0) { 
 			return movies[u][m];
 		}
-		ArrayList<Float> similarUsers = n.npHashNearestPoints(u);
-		//movies[u][m]
-		return 0;
+		
+		similarUsers = n.npHashNearestPoints(u);
+		
+		for(i = 0; i < similarUsers.size(); i++) {
+			if(movies[users.indexOf(similarUsers.get(i))][m] != 0) {
+				sum += movies[users.indexOf(similarUsers.get(i))][m];
+				count++;
+			}
+		}
+
+		return ((float)sum/(float)count);
 	}
 }
