@@ -11,15 +11,18 @@ import java.util.Scanner;
  */
 
 public class NearestPoints {
-	ArrayList<Float> points;
+	ArrayList<Float> points = new ArrayList<Float>();
 	
 	NearestPoints(String dataFile) throws FileNotFoundException {
-		File f = new File("../points.txt");
+		File f = new File(dataFile);
 		Scanner s = new Scanner(f);
 		
-		while(s.hasNextLine()) {
-			points.add(s.nextFloat());
-			System.out.println(s.nextFloat());
+		float temp = 0;
+		
+		while(s.hasNextFloat()) {
+			temp = s.nextFloat();
+			points.add(temp);
+//			System.out.println(temp);
 		}
 		
 		s.close();
