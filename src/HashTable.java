@@ -66,8 +66,12 @@ public class HashTable {
 		int bucket = f.hash(t.getKey());
 		buckets[bucket].add(t);
 		if(loadFactor() >= .7){
+			ArrayList<Tuple> oldTable = new ArrayList<Tuple>();
 			f = new HashFunction(2*p);
-			//TODO re add all the sus
+			for(int i = 0; i < p; i++) {
+				oldTable.addAll(buckets[i]);
+			}
+			
 		}
 	}
 	
