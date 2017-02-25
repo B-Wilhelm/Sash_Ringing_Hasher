@@ -85,6 +85,17 @@ public class HashTable {
 	}
 	
 	void remove(Tuple t) {
-		// Remove t from hash table
+		for(int i = 0; i < p;i++) {
+			for(int j = 0; j < buckets[i].size();j++)
+			{
+				if(buckets[i].get(j).equals(t))
+				{
+					buckets[i].remove(j);
+					return;//unsure if we only delete the one tuple or all tuples that match
+					//if we don't return add in the following line to make sure we don't go out of bounds
+					//j--;
+				}
+			}
+		}
 	}
 }

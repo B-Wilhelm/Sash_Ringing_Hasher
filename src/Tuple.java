@@ -24,5 +24,12 @@ public class Tuple {
 	
 	boolean equals(Tuple t) {
 		return (this.equals(t));
+		//potentially change to this
+		/*
+		 * if(this.key == t.getKey()&& this.value == t.getValue()){
+		 * 	return true;
+		 * }
+		 * return false;
+		 */
 	}
 }
