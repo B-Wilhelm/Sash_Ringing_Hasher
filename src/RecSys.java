@@ -66,7 +66,7 @@ public class RecSys {
 				}
 			}
 			if(similarUsers.get(i)-1 >= 0) {
-				x = users.indexOf(similarUsers.get(i)-11);
+				x = users.indexOf(similarUsers.get(i)-1);
 				if(movies[x][b] != 0) {
 					sum += movies[x][b];
 					count++;
