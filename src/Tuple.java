@@ -23,6 +23,6 @@ public class Tuple {
 	}
 	
 	boolean equals(Tuple t) {
-		return (value == t.value);
+		return (this.equals(t));
 	}
 }
