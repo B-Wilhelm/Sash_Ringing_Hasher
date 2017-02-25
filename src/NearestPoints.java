@@ -51,7 +51,9 @@ public class NearestPoints {
 	}
 	
 	void buildDataStructure(){
-		//TODO
+		HashTable T = new HashTable((int)(1.5 * points.size()));
+		
+		
 	}
 	
 	ArrayList<Float> npHashNearestPoints(float p){
