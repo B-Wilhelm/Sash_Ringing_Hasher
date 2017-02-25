@@ -10,45 +10,57 @@ import java.util.ArrayList;
 public class HashTable {
 	HelperClass h = new HelperClass();
 	HashFunction f;
-	ArrayList<Tuple>[] cols;
-	int p;
+	ArrayList<Tuple>[] buckets;
+	int p, i;
 	
 	@SuppressWarnings("unchecked")
 	HashTable(int size) {
 		p = h.primeFind(size);
 		f = new HashFunction(p);
-		cols = new ArrayList[p];
+		buckets = new ArrayList[p];
 		
-		for (int i = 0; i< p; i++) {
-			cols[i] = new ArrayList<Tuple>();
+		for (i = 0; i < p; i++) {
+			buckets[i] = new ArrayList<Tuple>();
 		}
 	}
 	
 	int maxLoad() {
 		// Return max load of table
+		int max = 0;
 		
-		return 0;
+		for (i = 0; i < p; i++) {
+			if(buckets[i].size() > max) {
+				max = buckets[i].size();
+			}
+		}
+		
+		return max;
 	}
 	
 	int averageLoad() {
 		// Return average load of table
-		
-		return 0;
+
+		return (numElements()/p);
 	}
 	
 	int size() {
-		// Return size of table
-		
-		return 0;
+		return p;
 	}
 	
 	int numElements() {
 		// Return number of elements in table
+		int total = 0;
 		
-		return 0;
+		for (i = 0; i < p; i++) {
+			total += buckets[i].size();
+		}
+		
+		return total;
 	}
 	
-	float loadFactor() { return (numElements()/size()); }
+	float loadFactor() {
+		return (numElements()/size());
+	}
 	
 	void add(Tuple t) {
 		// Adds t to the hash table, resizes table at load factor > .7 and rehashes
