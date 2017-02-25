@@ -66,7 +66,8 @@ public class HashTable {
 		int bucket = f.hash(t.getKey());
 		buckets[bucket].add(t);
 		if(loadFactor() >= .7){
-			//TODO resize the table
+			f = new HashFunction(2*p);
+			//TODO re add all the sus
 		}
 	}
 	
