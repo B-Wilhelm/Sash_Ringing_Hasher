@@ -39,23 +39,22 @@ public class RecSys {
 		}
 		
 		n = new NearestPoints(users);
-		
-		
 	}
 	
 	public float ratingOf(int u, int m) {
 		ArrayList<Float> similarUsers;
+		int a = u-1, b = m-1;
 		int sum = 0, count = 0;
 		
-		if(movies[u][m] != 0) { 
-			return movies[u][m];
+		if(movies[a][b] != 0) { 
+			return movies[a][b];
 		}
 		
 		similarUsers = n.npHashNearestPoints(u);
 		
 		for(i = 0; i < similarUsers.size(); i++) {
-			if(movies[users.indexOf(similarUsers.get(i))][m] != 0) {
-				sum += movies[users.indexOf(similarUsers.get(i))][m];
+			if(movies[users.indexOf(similarUsers.get(i))][b] != 0) {
+				sum += movies[users.indexOf(similarUsers.get(i))][b];
 				count++;
 			}
 		}
