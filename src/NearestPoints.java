@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,7 +16,7 @@ import java.util.Scanner;
  */
 
 public class NearestPoints {
-	ArrayList<Float> points;
+	ArrayList<Float> points, naive, hash;
 	int i;
 	
 	NearestPoints(String dataFile) throws FileNotFoundException {
@@ -42,8 +40,15 @@ public class NearestPoints {
 	}
 	
 	ArrayList<Float> naiveNearestPoints(float p){
-		//TODO
-		return null;
+		ArrayList<Float> naive = new ArrayList<Float>();
+		
+		for(i = 0; i < points.size(); i++) {
+			if(Math.abs(points.get(i)-p) <= 1) {
+				naive.add(points.get(i));
+			}
+		}
+		
+		return naive;
 	}
 	
 	void buildDataStructure(){
@@ -51,11 +56,18 @@ public class NearestPoints {
 	}
 	
 	ArrayList<Float> npHashNearestPoints(float p){
-		//TODO
-		return null;
+		hash = new ArrayList<Float>();
+		
+		for(i = 0; i < points.size(); i++) {
+			if(Math.abs(points.get(i)-p) <= 1) {
+				hash.add(points.get(i));
+			}
+		}
+		
+		return hash;
 	}
 	
-	void allNearestPointsNaive() throws FileNotFoundException, UnsupportedEncodingException{
+	void allNearestPointsNaive(){
 		for(i = 0; i < points.size(); i++) {
 			try {
 				printPoints(naiveNearestPoints(points.get(i)), "NaiveSolution");
