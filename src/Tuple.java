@@ -5,8 +5,8 @@
  */
 
 public class Tuple {
-	int key;
-	float value;
+	private int key;
+	private double value;
 	
 	Tuple(int keyP, float valueP) {
 		key = keyP;
@@ -17,7 +17,7 @@ public class Tuple {
 		return key;
 	}
 	
-	float getValue() {
+	double getValue() {
 		return value;
 	}
 	
