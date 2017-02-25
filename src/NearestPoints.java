@@ -59,8 +59,6 @@ public class NearestPoints {
 		Tuple temp;
 		for(int i = 0; i < points.size(); i++) {
 			temp = makeTuple(points.get(i));
-			System.out.println("Key: " + temp.getKey());
-//			System.out.println("Size: " + T.size());
 			T.add(temp);
 		}
 		
@@ -104,9 +102,7 @@ public class NearestPoints {
 		String toWrite;
 		
 		for(i = 0; i < list.size(); i++) {
-			toWrite = list.get(i).toString() + "\n";
-			System.out.println(toWrite);
-			writer.write(toWrite);
+			writer.write(list.get(i).toString() + "\n");
 		}
 		
 		writer.close();
