@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 public class NearestPoints {
 	ArrayList<Float> points, naive, hash;
+	HashTable T;
 	int i;
 	
 	NearestPoints(String dataFile) throws FileNotFoundException {
@@ -52,7 +53,7 @@ public class NearestPoints {
 	
 	void buildDataStructure(){
 		//Need to test run-time of this
-		HashTable T = new HashTable((int)(1.5 * points.size()));
+		T = new HashTable((int)(1.5 * points.size()));
 		Tuple temp;
 		for(int i = 0; i < points.size(); i++) {
 			temp = makeTuple(points.get(i));
@@ -64,10 +65,10 @@ public class NearestPoints {
 	ArrayList<Float> npHashNearestPoints(float p){
 		hash = new ArrayList<Float>();
 		
-		for(i = 0; i < points.size(); i++) {
-			if(Math.abs(points.get(i)-p) <= 1) {
-				hash.add(points.get(i));
-			}
+		Tuple temp = makeTuple(p);
+		ArrayList<Tuple> nearestPoints = T.search(temp.getKey());
+		for(int i = 0; i < nearestPoints.size(); i++) {
+			hash.add(nearestPoints.get(i).getValue());
 		}
 		
 		return hash;
@@ -105,9 +106,9 @@ public class NearestPoints {
 		writer.close();
 	}
 	
-	private Tuple makeTuple(float p){
+	private Tuple makeTuple(float p) {
 		int g = (int)Math.floor(p);
 		Tuple t = new Tuple(g,p);
 		return t;
-		}
+	}
 }
