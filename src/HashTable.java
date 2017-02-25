@@ -39,11 +39,12 @@ public class HashTable {
 	
 	int averageLoad() {
 		// Return average load of table
-
+		//TODO
 		return (numElements()/p);
 	}
 	
 	int size() {
+		//TODO
 		return p;
 	}
 	
@@ -63,7 +64,7 @@ public class HashTable {
 	}
 	
 	void add(Tuple t) {
-		
+		//TODO add the element to the table
 		if(loadFactor() >= .7){
 			//TODO resize the table
 		}

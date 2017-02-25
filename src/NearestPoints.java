@@ -18,6 +18,7 @@ public class NearestPoints {
 	}
 	
 	ArrayList<Float>  naiveNearestPoints(float p){
+		//TODO
 		return null;
 	}
 	
@@ -26,6 +27,7 @@ public class NearestPoints {
 	}
 	
 	ArrayList<Float> npHashNearestPoints(float p){
+		//TODO
 		return null;
 	}
 	
