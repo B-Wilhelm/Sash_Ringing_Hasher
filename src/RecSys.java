@@ -15,7 +15,7 @@ public class RecSys {
 	RecSys(String mrMatrix) throws FileNotFoundException {
 		File f = new File(mrMatrix);
 		Scanner s = new Scanner(f);
-		int userCount = 0, movieCount = 0;
+		int userCount = 0, movieCount = 0, i;
 		
 		if(s.hasNextLine()) {
 			userCount = s.nextInt();
@@ -23,11 +23,11 @@ public class RecSys {
 		}
 		
 		float users[] = new float[userCount];
-		int movies[] = new int[movieCount];
+		int movies[][] = new int[userCount][movieCount];
 		
-		for(int i = 0; i < users.length; i++) {
+		for(i = 0; s.hasNext(); i++) {
 			users[i] = s.nextFloat();
-			movies[i] = s.nextInt();
+			
 		}
 	}
 	

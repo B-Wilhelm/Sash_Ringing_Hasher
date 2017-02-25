@@ -1,3 +1,10 @@
+/** 
+ * 
+ * @author Brett Wilhelm
+ * @author Zach Johnson
+ *
+ */
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,13 +14,6 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-/** 
- * 
- * @author Brett Wilhelm
- * @author Zach Johnson
- *
- */
 
 public class NearestPoints {
 	ArrayList<Float> points, naive, hash;
@@ -109,5 +109,5 @@ public class NearestPoints {
 		int g = (int)Math.floor(p);
 		Tuple t = new Tuple(g,p);
 		return t;
-		}
+	}
 }
