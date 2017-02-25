@@ -67,9 +67,13 @@ public class HashTable {
 		buckets[bucket].add(t);
 		if(loadFactor() >= .7){
 			ArrayList<Tuple> oldTable = new ArrayList<Tuple>();
-			f = new HashFunction(2*p);
 			for(int i = 0; i < p; i++) {
 				oldTable.addAll(buckets[i]);
+			}
+			new HashTable(2*p);
+			for(int i = 0; i < oldTable.size(); i++){
+				bucket = f.hash(oldTable.get(i).getKey());
+				buckets[bucket].add(oldTable.get(i));
 			}
 			
 		}
