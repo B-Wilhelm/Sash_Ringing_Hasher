@@ -66,7 +66,13 @@ public class NearestPoints {
 	}
 	
 	void allNearestPointsHash(){
-		//TODO
+		for(i = 0; i < points.size(); i++) {
+			try {
+				printPoints(npHashNearestPoints(points.get(i)), "HashSolution");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,7 +81,7 @@ public class NearestPoints {
 		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename+".txt"), "utf-8"));
 		
 		for(i = 0; i < list.size(); i++) {
-			writer.write(list.get(i).toString());
+			writer.write(list.get(i).toString() + "\n");
 		}
 		
 		writer.close();
