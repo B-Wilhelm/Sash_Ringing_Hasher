@@ -43,8 +43,7 @@ public class HashTable {
 	
 	float loadFactor() {
 		// Return load factor (numElements/size)
-		
-		return 0;
+		return this.numElements()/this.size();
 	}
 	
 	void add(Tuple t) {
