@@ -7,29 +7,25 @@
 
 public class Tuple {
 	private int key;
-	private double value;
+	private float value;
 	
 	Tuple(int keyP, float valueP) {
 		key = keyP;
 		value = valueP;
 	}
 	
-	int getKey() {
+	public int getKey() {
 		return key;
 	}
 	
-	double getValue() {
+	public float getValue() {
 		return value;
 	}
 	
-	boolean equals(Tuple t) {
-		return (this.equals(t));
-		//potentially change to this
-		/*
-		 * if(this.key == t.getKey()&& this.value == t.getValue()){
-		 * 	return true;
-		 * }
-		 * return false;
-		 */
+	public boolean equals(Tuple t) {
+		if(this.key == t.getKey()&& this.value == t.getValue()){
+	 		return true;
+	 	}
+	 	return false;
 	}
 }
