@@ -21,16 +21,16 @@ public class HashFunction {
 		return a;
 	}
 	
-	void setA(int a) {
-		this.a = a;
+	void setA(int x) {
+		this.a = x%p;
 	}
 	
 	int getB() {
 		return b;
 	}
 	
-	void setB(int b) {
-		this.b = b;
+	void setB(int y) {
+		this.b = y%p;
 	}
 	
 	int getP() {
