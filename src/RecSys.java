@@ -52,7 +52,6 @@ public class RecSys {
 		}
 		
 		temp1 = n.npHashNearestPoints(users.get(a));
-		
 		if(a < users.size()-1) { temp2 = n.npHashNearestPoints(users.get(a+1)); }
 		if(a > 0) { temp3 = n.npHashNearestPoints(users.get(a-1)); }
 		
@@ -77,7 +76,9 @@ public class RecSys {
 				}
 			}
 		}
-
+		if(sum == 0 || count == 0) {
+			return 0;
+		}
 		return ((float)sum/(float)count);
 	}
 }

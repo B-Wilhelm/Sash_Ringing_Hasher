@@ -80,7 +80,7 @@ public class NearestPoints {
 	void allNearestPointsNaive() {
 		for(int i = 0; i < points.size(); i++) {
 			try {
-				if(i % (points.size()/100) == 0) {
+				if(i % (points.size()/20) == 0) {
 					System.out.println((i/(points.size()/100)) + "% completed with Naive method");
 				}
 				printPoints(naiveNearestPoints(points.get(i)), NAIVE_FILENAME);
@@ -93,7 +93,7 @@ public class NearestPoints {
 	void allNearestPointsHash(){
 		for(int i = 0; i < points.size(); i++) {
 			try {
-				if(i % (points.size()/100) == 0) {
+				if(i % (points.size()/20) == 0) {
 					System.out.println((i/(points.size()/100)) + "% completed with Hash method");
 				}
 				printPoints(npHashNearestPoints(points.get(i)), HASH_FILENAME);
