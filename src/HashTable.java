@@ -87,9 +87,7 @@ public class HashTable {
 	
 	ArrayList<Tuple> search(int k) {
 		// Return list of Tuples with k == key, blank list otherwise
-		System.out.println(k);
 		int bucket = f.hash(k);
-		System.out.println(bucket);
 		return buckets[bucket];
 	}
 	

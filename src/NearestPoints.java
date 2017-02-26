@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class NearestPoints {
 	public static String NAIVE_FILENAME="NaiveSolution", HASH_FILENAME="HashSolution";
 	ArrayList<Float> points, naive, hash;
-	HashTable T = null;
+	HashTable T;
 	int i;
 	
 	NearestPoints(String dataFile) throws FileNotFoundException {
@@ -34,11 +34,13 @@ public class NearestPoints {
 		}
 		
 		s.close();
+		System.out.println(points.size());
 		buildDataStructure();
 	}
 	
 	NearestPoints(ArrayList<Float> pointSet) {
 		points = pointSet;
+		buildDataStructure();
 	}
 	
 	ArrayList<Float> naiveNearestPoints(float p){
