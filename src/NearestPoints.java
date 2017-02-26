@@ -19,7 +19,6 @@ public class NearestPoints {
 	public static String NAIVE_FILENAME="NaiveSolution", HASH_FILENAME="HashSolution";
 	ArrayList<Float> points, naive, hash;
 	HashTable T;
-	int i;
 	
 	NearestPoints(String dataFile) throws FileNotFoundException {
 		points = new ArrayList<Float>();
@@ -45,7 +44,7 @@ public class NearestPoints {
 	ArrayList<Float> naiveNearestPoints(float p){
 		ArrayList<Float> naive = new ArrayList<Float>();
 		
-		for(i = 0; i < points.size(); i++) {
+		for(int i = 0; i < points.size(); i++) {
 			if(Math.abs(points.get(i)-p) <= 1) {
 				naive.add(points.get(i));
 			}
@@ -79,8 +78,11 @@ public class NearestPoints {
 	}
 	
 	void allNearestPointsNaive() {
-		for(i = 0; i < points.size(); i++) {
+		for(int i = 0; i < points.size(); i++) {
 			try {
+				if(i % (points.size()/100) == 0) {
+					System.out.println((i/(points.size()/100)) + "% completed with Naive method");
+				}
 				printPoints(naiveNearestPoints(points.get(i)), NAIVE_FILENAME);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -89,8 +91,11 @@ public class NearestPoints {
 	}
 	
 	void allNearestPointsHash(){
-		for(i = 0; i < points.size(); i++) {
+		for(int i = 1; i <= points.size(); i++) {
 			try {
+				if(i % (points.size()/100) == 0) {
+					System.out.println((i/(points.size()/100)) + "% completed with Hash method");
+				}
 				printPoints(npHashNearestPoints(points.get(i)), HASH_FILENAME);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -103,7 +108,7 @@ public class NearestPoints {
 	void printPoints(ArrayList<Float> list, String filename) throws IOException {
 		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename+".txt"), "utf-8"));
 		
-		for(i = 0; i < list.size(); i++) {
+		for(int i = 0; i < list.size(); i++) {
 			writer.write(list.get(i).toString() + "\n");
 		}
 		
