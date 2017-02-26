@@ -6,29 +6,16 @@ public class test {
 		long startTime;
 		
 		startTime = System.nanoTime();
-		RecSys r = new RecSys("matrix.txt");
-		System.out.println("Time elapsed during creation of RecSys object from matrix.txt: " + (System.nanoTime()-startTime)/1000000000 + " sec");
-		
-		startTime = System.nanoTime();
 		NearestPoints n = new NearestPoints("points.txt");
-		System.out.println("Time elapsed during creation of NearestPoints object from points.txt: " + (System.nanoTime()-startTime)/1000000000 + " sec");
-		
-		System.out.println("3,3: " + r.ratingOf(3,  3));
-		System.out.println("2,4: " + r.ratingOf(2,  4));
-		System.out.println("4,4: " + r.ratingOf(4,  4));
-		
-		System.out.println("T numElements(): " + r.n.T.numElements());
-		
-		System.out.println("1,2: " + r.ratingOf(1,  2));
-		System.out.println("5,2: " + r.ratingOf(5,  2));
+		System.out.println("Time elapsed during creation of NearestPoints object from points.txt: " + (System.nanoTime()-startTime)/1000000 + " ms");
 
 		startTime = System.nanoTime();
 		n.allNearestPointsNaive();
-		System.out.println("Time elapsed during naive: " + (System.nanoTime()-startTime)/1000000000 + " sec");
+		System.out.println("Time elapsed during naive: " + (System.nanoTime()-startTime)/1000000 + " ms");
 		
 		startTime = System.nanoTime();
 		n.allNearestPointsHash();
-		System.out.println("Time elapsed during hash: " + (System.nanoTime()-startTime)/1000000000 + " sec");
+		System.out.println("Time elapsed during hash: " + (System.nanoTime()-startTime)/1000000 + " ms");
 		
 	}
 
