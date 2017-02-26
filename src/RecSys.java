@@ -64,14 +64,14 @@ public class RecSys {
 				count++;
 			}
 			if(temp2 != null) {
-				x = users.indexOf(temp2.get(i+1));
+				x = users.indexOf(temp2.get(i));
 				if(movies[x][b] != 0) {
 					sum += movies[x][b];
 					count++;
 				}
 			}
 			if(temp3 != null) {
-				x = users.indexOf(temp3.get(i-1));
+				x = users.indexOf(temp3.get(i));
 				if(movies[x][b] != 0) {
 					sum += movies[x][b];
 					count++;
