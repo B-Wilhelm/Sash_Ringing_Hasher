@@ -96,6 +96,7 @@ public class HashTable {
 		for(int i=0;i<buckets[bucket].size();i++) {
 			if(t.equals(buckets[bucket].get(i))) {
 				buckets[bucket].remove(i);//potential out of bounds error
+				return;
 			}
 		}
 	}
