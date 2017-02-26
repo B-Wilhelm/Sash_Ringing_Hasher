@@ -34,7 +34,6 @@ public class NearestPoints {
 		}
 		
 		s.close();
-		System.out.println(points.size());
 		buildDataStructure();
 	}
 	
@@ -70,7 +69,6 @@ public class NearestPoints {
 		//Need to test run-time of this
 		hash = new ArrayList<Float>();
 		Tuple temp = makeTuple(p);
-		System.out.println(temp.getKey());
 		ArrayList<Tuple> nearestPoints= new ArrayList<Tuple>();
 		nearestPoints = T.search(temp.getKey());
 		for(int i = 0; i < nearestPoints.size(); i++) {

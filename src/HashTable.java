@@ -69,7 +69,6 @@ public class HashTable {
 	
 	void add(Tuple t) {
 		int bucket = f.hash(t.getKey());
-//		System.out.println(bucket);
 		buckets[bucket].add(t);
 		if(loadFactor() >= .7){
 			ArrayList<Tuple> oldTable = new ArrayList<Tuple>();

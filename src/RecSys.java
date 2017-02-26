@@ -50,7 +50,6 @@ public class RecSys {
 		if(movies[a][b] != 0) { 
 			return movies[a][b];
 		}
-		System.out.println(users.get(a));
 		
 		temp1 = n.npHashNearestPoints(users.get(a));
 		
