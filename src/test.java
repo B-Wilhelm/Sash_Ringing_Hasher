@@ -17,7 +17,7 @@ public class test {
 		System.out.println("2,4: " + r.ratingOf(2,  4));
 		System.out.println("4,4: " + r.ratingOf(4,  4));
 		
-		System.out.println(r.n.T.numElements());
+		System.out.println("T numElements(): " + r.n.T.numElements());
 		
 		System.out.println("1,2: " + r.ratingOf(1,  2));
 		System.out.println("5,2: " + r.ratingOf(5,  2));

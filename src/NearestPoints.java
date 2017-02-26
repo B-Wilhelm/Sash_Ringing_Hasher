@@ -91,7 +91,7 @@ public class NearestPoints {
 	}
 	
 	void allNearestPointsHash(){
-		for(int i = 1; i <= points.size(); i++) {
+		for(int i = 0; i < points.size(); i++) {
 			try {
 				if(i % (points.size()/100) == 0) {
 					System.out.println((i/(points.size()/100)) + "% completed with Hash method");
