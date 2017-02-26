@@ -67,7 +67,10 @@ public class NearestPoints {
 	ArrayList<Float> npHashNearestPoints(float p) {
 		//Need to test run-time of this
 		hash = new ArrayList<Float>();
-		ArrayList<Tuple> nearestPoints = T.search(makeTuple(p).getKey());
+		Tuple temp = makeTuple(p);
+		System.out.println(temp.getKey());
+		ArrayList<Tuple> nearestPoints= new ArrayList<Tuple>();
+		nearestPoints = T.search(temp.getKey());
 		for(int i = 0; i < nearestPoints.size(); i++) {
 			hash.add(nearestPoints.get(i).getValue());
 		}

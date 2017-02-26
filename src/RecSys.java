@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 
 public class RecSys {
-	private NearestPoints n;
+	NearestPoints n;
 	ArrayList<Float> users;
 	int userCount, movieCount, i, j;
 	int movies[][];
@@ -50,8 +50,8 @@ public class RecSys {
 		if(movies[a][b] != 0) { 
 			return movies[a][b];
 		}
-		
-		similarUsers = n.npHashNearestPoints(users.indexOf(a));
+		System.out.println(users.get(a));
+		similarUsers = n.npHashNearestPoints(users.get(a));
 		
 		for(i = 0; i < similarUsers.size(); i++) {
 			x = users.indexOf(similarUsers.get(i));

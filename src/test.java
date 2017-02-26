@@ -4,21 +4,22 @@ public class test {
 
 	public static void main(String[] args) throws FileNotFoundException {		
 		RecSys r = new RecSys("matrix.txt");
-		NearestPoints n = new NearestPoints("points.txt");
+		//NearestPoints n = new NearestPoints("points.txt");
 		
-		System.out.println(r.ratingOf(3,  3));
+		//System.out.println(r.ratingOf(3,  3));
 		
-		System.out.println(r.ratingOf(2,  4));
+		//System.out.println(r.ratingOf(2,  4));
 		
-		System.out.println(r.ratingOf(4,  4));
+		//System.out.println(r.ratingOf(4,  4));
 		
-//		System.out.println(r.ratingOf(4,  3));
+		System.out.println(r.n.T.size());
+		System.out.println(r.ratingOf(1,  2));
 		
-//		System.out.println(r.ratingOf(5,  2));
+		System.out.println(r.ratingOf(5,  2));
 		
-		n.allNearestPointsNaive();
+		//n.allNearestPointsNaive();
 		
-		n.allNearestPointsHash();
+		//n.allNearestPointsHash();
 	}
 
 }
