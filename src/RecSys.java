@@ -43,7 +43,7 @@ public class RecSys {
 	}
 	
 	public float ratingOf(int u, int m) {
-		ArrayList<Float> similarUsers;
+		ArrayList<Float> temp1, temp2 = null, temp3 = null;
 		int a = u-1, b = m-1;
 		int sum = 0, count = 0, x;
 		
@@ -51,23 +51,27 @@ public class RecSys {
 			return movies[a][b];
 		}
 		System.out.println(users.get(a));
-		similarUsers = n.npHashNearestPoints(users.get(a));
 		
-		for(i = 0; i < similarUsers.size(); i++) {
-			x = users.indexOf(similarUsers.get(i));
+		temp1 = n.npHashNearestPoints(users.get(a));
+		
+		if(a < users.size()-1) { temp2 = n.npHashNearestPoints(users.get(a+1)); }
+		if(a > 0) { temp3 = n.npHashNearestPoints(users.get(a-1)); }
+		
+		for(i = 0; i < temp1.size(); i++) {
+			x = users.indexOf(temp1.get(i));
 			if(movies[x][b] != 0) {
 				sum += movies[x][b];
 				count++;
 			}
-			if(similarUsers.get(i)+1 <= 4) {
-				x = users.indexOf(similarUsers.get(i)+1);
+			if(temp2 != null) {
+				x = users.indexOf(temp2.get(i+1));
 				if(movies[x][b] != 0) {
 					sum += movies[x][b];
 					count++;
 				}
 			}
-			if(similarUsers.get(i)-1 >= 0) {
-				x = users.indexOf(similarUsers.get(i)-1);
+			if(temp3 != null) {
+				x = users.indexOf(temp3.get(i-1));
 				if(movies[x][b] != 0) {
 					sum += movies[x][b];
 					count++;
