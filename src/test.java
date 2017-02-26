@@ -21,16 +21,16 @@ public class test {
 		System.out.println(r.ratingOf(1,  2));
 		
 
-//		System.out.println(r.ratingOf(5,  2));
+		System.out.println(r.ratingOf(5,  2));
 
-		/*startTime = System.nanoTime();
-		n.allNearestPointsNaive();
-		System.out.println("Time elapsed during naive: " + (System.nanoTime()-startTime)/1000000000 + " sec");
+//		startTime = System.nanoTime();
+//		n.allNearestPointsNaive();
+//		System.out.println("Time elapsed during naive: " + (System.nanoTime()-startTime)/1000000000 + " sec");
 		
 		startTime = System.nanoTime();
 		n.allNearestPointsHash();
 		System.out.println("Time elapsed during hash: " + (System.nanoTime()-startTime)/1000000000 + " sec");
-		*/
+		
 	}
 
 }
